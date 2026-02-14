@@ -7,5 +7,5 @@ export const register = (req, res) => {
     res.status(200).json("hi from register");
 }
 export const products = (req, res) => {
-    res.status(200).json("hi from products");
+    res.status(200).json("hi from products from jonus");
 }
