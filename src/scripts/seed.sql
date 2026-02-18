@@ -185,3 +185,15 @@ INSERT INTO products (name, description, price, category_id, image_url, featured
 		'/images/products/field-repair-kit.jpg',
 		FALSE
 	);
+
+INSERT INTO images (url, description) VALUES 
+('https://pixabay.com/photos/mountain-person-lake-switzerland-5360913/', 'mountain, person, lake image'),
+('https://pixabay.com/photos/mountain-climbing-5-dragon-peak-2124113/', 'mountain climbing, 5 dragon peak, the chubu sangaku national park, japan, snow, snow mountain, nature, summit, cold, wind, climbers, altitude, winter mountaineering, landscape, winter, mountain, peak image'),
+('https://pixabay.com/photos/peak-summit-mountains-5645235/', 'peak, summit, mountains, nature, snow mountains, alps, alpine, mountain range, mountain landscape, mountainous, landscape, snow, clouds, switzerland image'),
+('https://unsplash.com/photos/person-carrying-yellow-and-black-backpack-walking-between-green-plants-UVyOfX3v0Ls', 'hiker, backpack, green plants, grass, woman, summer, mountains, outdoor, grass, hiking, adventure, colorado, backpack, hat, explore, hiker, follow, nature, travel, life image'),
+('https://unsplash.com/photos/person-in-green-jacket-walking-on-pathway-during-daytime-Np22XKv8_nA', 'person, green jacket, pathway, mountains, explore, hike, human, green, photography, photo, hiking, usa, walking, path, outdoors, mountain range, trail, peak, slope, port angeles image'),
+('https://unsplash.com/photos/person-in-blue-jacket-and-black-pants-walking-on-green-grass-field-during-daytime-Cu5BNBDKi5w', 'human, road, photography, grey, photo, scenery, hiking, adventure, walking, rock, path, outdoors, mountain range, colorado, trail, wilderness, peak, slope, leisure activities image'),
+('https://unsplash.com/photos/man-walking-on-walkway-facing-mountains-iiVpZF2f9nM', 'running, run, runner, trail, rocky mountains, green mountains, hiking trail, summer mountains, rockies, trail runner, mountain runner, human, blue, land, road, plant, grass, scenery, hiking, field image'),
+('https://unsplash.com/photos/person-holding-mug-qkMQ5N2d9aY', 'person, holding, mug, coffee, tea, hands, warm, cozy, outdoors, nature, relaxation, morning, camping, adventure, france, french alps, drink, forest, trees, peaceful, serenity, lifestyle image'),
+('https://pixabay.com/photos/camp-camping-campsite-tent-2650359/', 'camp, camping, campsite, tent, mountains, iceland, scenic view, landscape, adventure, nature, outdoors image');
+
