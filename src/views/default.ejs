@@ -5,6 +5,8 @@
     <title><%= title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <script src="/js/header.js" defer></script>
+
     <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
@@ -34,7 +36,7 @@
 
     <main class="container">
         <section class="mission section">
-            <div class="text">
+            <div class="text align-items-center">
                 <h1>Welcome to Cascadia Gear Co-op</h1>
                 <p>Your one-stop shop for all your outdoor gear needs. Explore our wide selection of camping, hiking, and adventure equipment.</p>
             </div>
@@ -42,7 +44,7 @@
         </section>
 
         <section class="focus section">
-            <div class="text">
+            <div class="text align-items-center">
                 <h2>Our Focus</h2>
                 <ul>
                     <li>Quality outdoor gear at affordable prices</li>
@@ -54,25 +56,24 @@
         </section>
 
         <section class="getStarted section center">
-            <h2>Get Started</h2>
-            <p>Browse our products, create an account, and start your outdoor adventure today!</p>
-            <p class="note">When authentication is implemented, our product page will be behind a login wall.</p>
-            <a href="/register" class="cta-button">Create Account</a>
+            <div class="text">
+                <h2>Get Started</h2>
+                <p>Browse our products, create an account, and start your outdoor adventure today!</p>
+                <p class="note">When authentication is implemented, our product page will be behind a login wall.</p>
+                <a href="/register" class="cta-button">Create Account</a>
+                <a href="/products" class="cta-button">Browse Products</a>
+            </div>
         </section>
 
         <section class="spotlight section">
             <div class="image-placeholder large"></div>
-            <div class="text">
+            <div class="text align-items-center">
                 <h2>Spotlight Product</h2>
                 <p>Check out our featured product of the month! This will showcase one of our top-selling items.</p>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>Footer section to be implemented here</p>
-    </footer>
-
-    <script src="/js/header.js"></script>
+    <%- include("../partials/footer") %>
 </body>
 </html>
