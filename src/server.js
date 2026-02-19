@@ -1,6 +1,6 @@
 import app from './app.js';
 import dotenv from 'dotenv';
-import mysql from 'mysql2/promise.js';
+import mysql from 'mysql2/promise';
 
 //read environment variables
 dotenv.config();
