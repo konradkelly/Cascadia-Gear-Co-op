@@ -32,12 +32,12 @@ export const getData = async (req, res) => {
 export const landingPage = async (req, res) => {
     try {
         const images = await getRandomImages();
-        res.render("default", {
-            title: "MVC Starter App",
-            subtitle: "Express + EJS + Static Assets",
-            images
-        });
-        // res.status(200).json(images);
+        // res.render("default", {
+        //     title: "MVC Starter App",
+        //     subtitle: "Express + EJS + Static Assets",
+        //     images
+        // });
+        res.status(200).json(images);
     } catch (error) {
         console.error('Database error:', error.message);
         res.status(500).json({ error: 'RandomImages: Database query failed' });
