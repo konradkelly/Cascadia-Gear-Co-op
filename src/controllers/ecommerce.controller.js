@@ -1,6 +1,6 @@
 //place controller functions here...
 import { getAllProducts } from '../services/default.service.js';
-import imageService from '../model/services/imageService.js';
+import imageService from '../services/imageService.js';
 
 export const login = (req, res) => {
     res.status(200).json("hi from login");
