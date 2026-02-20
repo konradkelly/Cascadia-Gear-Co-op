@@ -37,6 +37,7 @@ export const landingPage = async (req, res) => {
             images,
             featuredProduct
         });
+        // res.status(200).json({ images });
     } catch (error) {
         console.error('Error fetching images:', error.message);
         res.render("default", {
