@@ -116,10 +116,11 @@ body {
 
 /* Scrolling Container */
 .scroll-container {
+    --marquee-gap: 0.7rem;
     background-color: black;
     position: relative;
     width: 100%;
-    padding-top:5px;
+    padding: 10px 0 10px;
     max-width: none;
     margin: .5rem auto;
     overflow: hidden;
@@ -129,10 +130,25 @@ body {
 /* Scrolling Track */
 .scroll-list {
     display: flex;
-    gap: 0.5rem;
     width: max-content;
-    animation: scroll 30s linear infinite;
+    animation: scroll 25s linear infinite;
     will-change: transform;
+}
+
+.scroll-group {
+    display: flex;
+    gap: 0.7rem;
+    flex-shrink: 0;
+}
+
+.tag img {
+    height: 350px;
+    width: 300px; /* fixed width */
+    object-fit: cover;
+}
+
+.tag:nth-child(4n) {
+    margin-right: 0.7rem;
 }
 
 /* Centered Text */
@@ -150,7 +166,7 @@ body {
     pointer-events: none;
 
     background: rgba(0, 0, 0, 1.0);
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     border-radius: 10px;
     box-shadow: black 0px 4px 15px;
 }
@@ -185,12 +201,8 @@ body {
 
 /* Animation */
 @keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
+    from { transform: translateX(0); }
+    to   { transform: translateX(calc(-50%)); }
 }
 
 /* Main Container */
@@ -243,12 +255,136 @@ body {
     flex: 2;
     height: 300px;
     background: linear-gradient(135deg, #444, #777);
+    padding: 0.9rem;
+    box-sizing: border-box;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-top: -12px;
+    margin-bottom: -12px;
 }
 
 .image-placeholder.large {
     height: 350px;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    display: block;      
+    border-radius: 12px; 
+}
+
+.spotlight.section {
+    display: grid;
+    grid-template-columns: 1fr 470px;
+    align-items: start;
+    gap: 1.25rem;
+    overflow: visible;
+    background: transparent;
+    position: relative;
+    isolation: isolate;
+}
+
+.spotlight.section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 14px;
+    bottom: 14px;
+    background-color: grey;
+    border-radius: 22px;
+    z-index: 0;
+}
+
+.spotlight-media {
+    width: 410px;
+    max-width: 410px;
+    height: 275px;
+    justify-self: end;
+    background: linear-gradient(135deg, #5a5a5a, #2d2d2d);
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 14px 34px rgba(0,0,0,0.6);
+    margin-top: -26px;
+    position: relative;
+    z-index: 2;
+    transform: translate(14px, -8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.spotlight-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 0.35rem;
+    box-sizing: border-box;
+}
+
+.spotlight-text,
+.text-spotlight-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem 1.5rem;
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.spotlight-text p,
+.text-spotlight-text p {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+    .spotlight.section {
+        grid-template-columns: 1fr;
+    }
+
+    .spotlight-media {
+        width: 100%;
+        max-width: 100%;
+        height: 220px;
+        justify-self: stretch;
+        margin-top: 0;
+        margin-bottom: 0;
+        transform: none;
+    }
+
+    .image-placeholder {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .spotlight-text,
+    .text-spotlight-text {
+        padding: 0.75rem 0.75rem 0;
+    }
+}
+
+.spotlight-name {
+    margin: 0 0 0.5rem;
+}
+
+.spotlight-price {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.spotlight-category {
+    margin-top: 0.25rem;
+    font-weight: 600;
+    opacity: 0.85;
 }
 
 /* Centered Section (Get Started) */
@@ -286,6 +422,7 @@ body {
     padding-left: 2rem;
     justify-content: center;
 }
+
 
 
 

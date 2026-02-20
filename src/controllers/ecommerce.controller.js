@@ -1,5 +1,5 @@
 //place controller functions here...
-import { getAllProducts } from '../services/default.service.js';
+import { getAllProducts, getFeaturedProduct } from '../services/default.service.js';
 import imageService from '../services/imageService.js';
 
 export const login = (req, res) => {
@@ -26,15 +26,24 @@ export const getData = async (req, res) => {
 
 export const landingPage = async (req, res) => {
     try {
-        const images = await imageService.getRandomImages();
+        const [images, featuredProduct] = await Promise.all([
+            imageService.getRandomImages(),
+            getFeaturedProduct()
+        ]);
         console.log(images);
         res.render("default", {
             title: "MVC Starter App",
             subtitle: "Express + EJS + Static Assets",
-            images
+            images,
+            featuredProduct
         });
     } catch (error) {
         console.error('Error fetching images:', error.message);
-        res.status(500).json({ error: 'Failed to load page' });
+        res.render("default", {
+            title: "MVC Starter App",
+            subtitle: "Express + EJS + Static Assets",
+            images: [],
+            featuredProduct: null
+        });
     }
 }

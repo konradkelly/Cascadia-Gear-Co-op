@@ -3,188 +3,112 @@
 -- =============================================
 
 INSERT INTO categories (name) VALUES
-	('Backpacks'),
-	('Tents'),
-	('Sleeping Bags'),
-	('Sleeping Pads'),
-	('Camp Cookware'),
-	('Water Bottles'),
-	('Water Filters'),
-	('Headlamps'),
-	('Lanterns'),
-	('Hiking Poles'),
-	('First Aid'),
-	('Navigation'),
-	('Outdoor Kitchen'),
-	('Camp Furniture'),
-	('Climbing Gear'),
-	('Trail Tools'),
-	('Coolers'),
-	('Fire Starters'),
-	('Dry Bags'),
-	('Repair Kits');
+('Backpacks'),
+('Tents'),
+('Sleep Systems'),
+('Camp Essentials'),
+('Accessories & Tools');
 
 INSERT INTO products (name, description, price, category_id, image_url, featured) VALUES
-	(
-		'Summit 45L Pack',
-		'Lightweight 45L hiking pack with ventilated back panel and removable rain cover.',
-		129.99,
-		(SELECT id FROM categories WHERE name = 'Backpacks'),
-		'/images/products/summit-45l-pack.jpg',
-		TRUE
-	),
-	(
-		'Ridgeline 2P Tent',
-		'Freestanding two-person tent with aluminum poles and full-coverage fly.',
-		219.00,
-		(SELECT id FROM categories WHERE name = 'Tents'),
-		'/images/products/ridgeline-2p-tent.jpg',
-		TRUE
-	),
-	(
-		'Boreal 20F Sleeping Bag',
-		'Synthetic insulation sleeping bag rated to 20F with draft collar.',
-		149.50,
-		(SELECT id FROM categories WHERE name = 'Sleeping Bags'),
-		'/images/products/boreal-20f-bag.jpg',
-		FALSE
-	),
-	(
-		'Strata Air Pad',
-		'Ultralight inflatable sleeping pad with integrated pump sack.',
-		89.95,
-		(SELECT id FROM categories WHERE name = 'Sleeping Pads'),
-		'/images/products/strata-air-pad.jpg',
-		FALSE
-	),
-	(
-		'TrailChef Cookset',
-		'Two-pot anodized aluminum cookset with nesting bowls and lid.',
-		64.00,
-		(SELECT id FROM categories WHERE name = 'Camp Cookware'),
-		'/images/products/trailchef-cookset.jpg',
-		FALSE
-	),
-	(
-		'Canyon 32oz Bottle',
-		'Insulated stainless steel bottle keeps drinks cold for 24 hours.',
-		29.95,
-		(SELECT id FROM categories WHERE name = 'Water Bottles'),
-		'/images/products/canyon-32oz-bottle.jpg',
-		TRUE
-	),
-	(
-		'StreamGuard Filter',
-		'Compact water filter removes bacteria and protozoa for backcountry use.',
-		54.99,
-		(SELECT id FROM categories WHERE name = 'Water Filters'),
-		'/images/products/streamguard-filter.jpg',
-		FALSE
-	),
-	(
-		'Aurora 300 Headlamp',
-		'300-lumen headlamp with red mode and USB-C rechargeable battery.',
-		39.00,
-		(SELECT id FROM categories WHERE name = 'Headlamps'),
-		'/images/products/aurora-300-headlamp.jpg',
-		TRUE
-	),
-	(
-		'Beacon Camp Lantern',
-		'Collapsible LED lantern with warm glow and 48-hour runtime.',
-		44.50,
-		(SELECT id FROM categories WHERE name = 'Lanterns'),
-		'/images/products/beacon-lantern.jpg',
-		FALSE
-	),
-	(
-		'Summit Trek Poles',
-		'Carbon fiber trekking poles with cork grips and quick locks.',
-		119.00,
-		(SELECT id FROM categories WHERE name = 'Hiking Poles'),
-		'/images/products/summit-trek-poles.jpg',
-		FALSE
-	),
-	(
-		'Alpine First Aid Kit',
-		'Adventure-ready first aid kit with organized compartments.',
-		34.00,
-		(SELECT id FROM categories WHERE name = 'First Aid'),
-		'/images/products/alpine-first-aid-kit.jpg',
-		FALSE
-	),
-	(
-		'Trail Compass Pro',
-		'Liquid-filled compass with declination adjustment and mirror.',
-		27.50,
-		(SELECT id FROM categories WHERE name = 'Navigation'),
-		'/images/products/trail-compass-pro.jpg',
-		FALSE
-	),
-	(
-		'Camp Flame Stove',
-		'Compact canister stove with quick ignition and windscreen.',
-		52.00,
-		(SELECT id FROM categories WHERE name = 'Outdoor Kitchen'),
-		'/images/products/camp-flame-stove.jpg',
-		TRUE
-	),
-	(
-		'Pinecrest Camp Chair',
-		'Folding camp chair with mesh back and cup holder.',
-		39.99,
-		(SELECT id FROM categories WHERE name = 'Camp Furniture'),
-		'/images/products/pinecrest-chair.jpg',
-		FALSE
-	),
-	(
-		'Granite Climb Harness',
-		'Adjustable climbing harness with gear loops and padded waist.',
-		79.00,
-		(SELECT id FROM categories WHERE name = 'Climbing Gear'),
-		'/images/products/granite-harness.jpg',
-		FALSE
-	),
-	(
-		'TrailFix Multi-Tool',
-		'Pocket multi-tool with knife, pliers, and screwdriver bits.',
-		24.95,
-		(SELECT id FROM categories WHERE name = 'Trail Tools'),
-		'/images/products/trailfix-multitool.jpg',
-		FALSE
-	),
-	(
-		'Glacier 45 Cooler',
-		'Rotomolded cooler keeps ice for up to 4 days.',
-		189.00,
-		(SELECT id FROM categories WHERE name = 'Coolers'),
-		'/images/products/glacier-45-cooler.jpg',
-		TRUE
-	),
-	(
-		'SparkPath Fire Starter',
-		'Ferro rod fire starter with striker and lanyard.',
-		14.99,
-		(SELECT id FROM categories WHERE name = 'Fire Starters'),
-		'/images/products/sparkpath-fire-starter.jpg',
-		FALSE
-	),
-	(
-		'Drift 15L Dry Bag',
-		'Waterproof roll-top dry bag for river and rain protection.',
-		18.00,
-		(SELECT id FROM categories WHERE name = 'Dry Bags'),
-		'/images/products/drift-15l-drybag.jpg',
-		FALSE
-	),
-	(
-		'Field Repair Kit',
-		'Patch kit for tents, pads, and inflatables with adhesive backing.',
-		12.50,
-		(SELECT id FROM categories WHERE name = 'Repair Kits'),
-		'/images/products/field-repair-kit.jpg',
-		FALSE
-	);
+(
+    'Northface 45L Pack',
+    'Lightweight 45L hiking pack with ventilated back panel and removable rain cover.',
+    129.99,
+    (SELECT id FROM categories WHERE name = 'Backpacks'),
+    'https://www.rei.com/media/fd07bf0a-b3c9-4a92-a984-8dce9ba7faa4.jpg?size=1500',
+    TRUE
+),
+
+(
+    'Ridgeline 2P Tent',
+    'Freestanding two-person tent with aluminum poles and full-coverage fly.',
+    219.00,
+    (SELECT id FROM categories WHERE name = 'Tents'),
+    'https://www.rei.com/media/1e47bd14-a38d-42f2-8f0f-94fdb980a983.jpg?size=1500',
+    TRUE
+),
+
+(
+    'NEMO Disco 15 Sleeping Bag',
+    'Down sleeping bag rated for cold-weather backpacking.',
+    149.50,
+    (SELECT id FROM categories WHERE name = 'Sleep Systems'),
+    'https://www.rei.com/media/8ff133cb-9a2a-44b7-a6a7-38f4096d3a27.jpg?size=1500',
+    FALSE
+),
+
+(
+    'Boundary Deluxe Air Pad',
+    'Ultralight inflatable sleeping pad with integrated pump sack.',
+    89.95,
+    (SELECT id FROM categories WHERE name = 'Sleep Systems'),
+    'https://www.rei.com/media/1d86ca9c-1b63-4339-ace5-fd15687753bc?size=2000',
+    FALSE
+),
+
+(
+    'Soto Cookset',
+    'Two-pot anodized aluminum cookset with nesting bowls and lid.',
+    64.00,
+    (SELECT id FROM categories WHERE name = 'Camp Essentials'),
+    'https://www.rei.com/media/e9858a2a-b89b-4844-bb77-de1d87c9ad87.jpg',
+    FALSE
+),
+
+(
+    'Hibear 32oz Bottle',
+    'Insulated stainless steel bottle keeps drinks cold for 24 hours.',
+    29.95,
+    (SELECT id FROM categories WHERE name = 'Camp Essentials'),
+    'https://www.rei.com/media/5dd36537-663d-4e83-b2b2-61e247f219c2.jpg?size=1500',
+    TRUE
+),
+
+(
+    'Sawyer Filter',
+    'Compact water filter for backcountry use.',
+    54.99,
+    (SELECT id FROM categories WHERE name = 'Camp Essentials'),
+    'https://www.rei.com/media/f50e522f-4bad-415e-ad95-dd376cb53fe7.jpg?size=1500',
+    FALSE
+),
+
+(
+    'Black Diamond Headlamp',
+    '300-lumen rechargeable headlamp.',
+    39.00,
+    (SELECT id FROM categories WHERE name = 'Accessories & Tools'),
+    'https://www.rei.com/media/c5b8e825-8595-42fb-a541-1a67fc9f0cd7.jpg?size=1500',
+    FALSE
+),
+
+(
+    'Leki Trek Poles',
+    'Carbon fiber trekking poles with cork grips.',
+    119.00,
+    (SELECT id FROM categories WHERE name = 'Accessories & Tools'),
+    'https://www.rei.com/media/c17a38d9-578d-4714-bb75-f1db1285bf6f.jpg?size=1500',
+    FALSE
+),
+
+(
+    'Skeletool CX Multi-Tool',
+    'Pocket multi-tool with knife and pliers.',
+    24.95,
+    (SELECT id FROM categories WHERE name = 'Accessories & Tools'),
+    'https://www.rei.com/media/6ec306a4-fcfb-4575-9d8b-15b0c8377b95.jpg?size=1500',
+    FALSE
+),
+
+(
+    'Glacier 45 Cooler',
+    'Rotomolded cooler keeps ice for up to 4 days.',
+    189.00,
+    (SELECT id FROM categories WHERE name = 'Camp Essentials'),
+    'https://www.rei.com/media/1892dfe9-e503-490f-975a-cf186af22f59.jpg?size=1500',
+    TRUE
+);
+
 
 INSERT INTO images (url, description) VALUES 
 ('https://cdn.pixabay.com/photo/2020/07/01/20/32/mountain-5360913_1280.jpg', 'mountain, person, lake image'),

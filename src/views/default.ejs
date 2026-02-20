@@ -14,14 +14,16 @@
     
     <div class="scroll-container">
     <div class="scroll-list">
-    <% images.forEach(image => { %>
-        <div class="tag"><img src="<%= image.url %>" alt="<%= image.description %>"></div>
-    <% }) %>
-        <!-- Duplicate for seamless loop -->
-    <% images.forEach(image => { %>
-        <div class="tag"><img src="<%= image.url %>" alt="<%= image.description %>"></div>
-    <% }) %>
-    <pre><%= JSON.stringify(images, null, 2) %></pre>
+        <div class="scroll-group">
+        <% images.forEach(image => { %>
+            <div class="tag"><img src="<%= image.url %>" alt="<%= image.description %>"></div>
+        <% }) %>
+        </div>
+        <div class="scroll-group" aria-hidden="true">
+        <% images.forEach(image => { %>
+            <div class="tag"><img src="<%= image.url %>" alt="<%= image.description %>"></div>
+        <% }) %>
+        </div>
     </div>
 
         <div class="scroll-text">
@@ -38,7 +40,7 @@
                 <h1>Welcome to Cascadia Gear Co-op</h1>
                 <p>Your one-stop shop for all your outdoor gear needs. Explore our wide selection of camping, hiking, and adventure equipment.</p>
             </div>
-            <div class="image-placeholder"></div>
+            <div class="image-placeholder"><img src="https://images.pexels.com/photos/714258/pexels-photo-714258.jpeg?" alt="Mountains with whitecap snow"/></div>
         </section>
 
         <section class="focus section">
@@ -50,7 +52,7 @@
                     <li>Community-driven co-op model</li>
                 </ul>
             </div>
-            <div class="image-placeholder"></div>
+            <div class="image-placeholder"><img src="https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg" alt="Outdoor Gear"/></div>
         </section>
 
         <section class="getStarted section center">
@@ -64,15 +66,33 @@
         </section>
 
         <section class="spotlight section">
-            <div class="image-placeholder large"></div>
-            <div class="text align-items-center">
-                <h2>Spotlight Product</h2>
-                <p>Check out our featured product of the month! This will showcase one of our top-selling items.</p>
-            </div>
+            <% if (featuredProduct) { %>
+                <div class="text spotlight-text">
+                    <h2>Spotlight Product</h2>
+                    <h3 class="spotlight-name"><%= featuredProduct.name %></h3>
+                    <p><%= featuredProduct.description %></p>
+                    <p class="spotlight-price">$<%= Number(featuredProduct.price).toFixed(2) %></p>
+                    <% if (featuredProduct.category_name) { %>
+                        <p class="spotlight-category"><%= featuredProduct.category_name %></p>
+                    <% } %>
+                </div>
+                <div class="spotlight-media">
+                    <img
+                        src="<%= featuredProduct.image_url || '/images/default.webp' %>"
+                        alt="<%= featuredProduct.name %>"
+                        class="spotlight-image"
+                    />
+                </div>
+            <% } else { %>
+                <div class="text align-items-center">
+                    <h2>Spotlight Product</h2>
+                    <p>Check out our featured product of the month! This will showcase one of our top-selling items.</p>
+                </div>
+                <div class="image-placeholder large"></div>
+            <% } %>
         </section>
     </main>
-
-    <h3 class ="otherProducts">Other Products</h3>
+    
 
     <%- include("../partials/footer") %>
 </body>
